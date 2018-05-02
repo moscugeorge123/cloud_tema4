@@ -5,10 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cloud Chat</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <h1>Some tests</h1>
+    <div class="auth" id="auth">
+        <div class="auth-container">
+            <input type="text" placeholder="Your name" id="username">
+            <input type="text" placeholder="Group you want to connect" id="usergroup">
+            <button onclick="sendUser()">Next</button>
+        </div>
+    </div>
+    <div class="container">
+        <div id="users" class="sidenav users" onload="insertUsers()">
+            <h2 style="text-align: center">Active Users</h2>
+        </div>
+        <div class="content chat">
+            <div class="messages" id="messages"></div>
+            <div class="input">
+                <div id="message" class="text" contenteditable="true" onkeyup="sendMessage(event)"></div>
+                <div class="btn" onclick="sendMessage(event)">Send</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

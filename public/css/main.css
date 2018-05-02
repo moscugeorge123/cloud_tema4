@@ -1,5 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
 html,
 body {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+/* AUTH AREA */
+
+.auth {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f1f0f0;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container {
+    flex-basis: 25%;
+    min-width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px 5px rgba(102, 102, 102, 0.3);
+}
+
+.auth-container input {
+    margin: 10px;
+    font-size: 16px;
+    flex-basis: 100%;
+    height: 45px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #333333;
+    background-color: #ffffff;
+    transition: border 0.1s ease-in-out;
+}
+
+.auth-container button {
+    flex-basis: 100%;
+    margin: 10px;
+    align-self: flex-end;
+    justify-self: flex-end;
+    height: 40px;
+    border: none;
+    background-color: #999999;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.1s ease-in-out;
+}
+
+.auth-container button:hover {
+    cursor: pointer;
+    background-color: #f1f0f0;
+    color: #333333;
+}
+
+.auth-container input:focus {
+    outline: none;
+    border-color: #999999;
+}
+
+/* CHAT */
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100%;
+    flex-direction: row;
+}
+
+/* Users Area */
+.container .sidenav.users {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    min-width: 250px;
+    box-sizing: border-box;
+    border-right: 1px solid #999999;
+}
+
+.sidenav.users .user {
+    display: flex;
+    flex-direction: row;
+    min-height: 75px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #333333;
+}
+
+.user:hover {
+    background-color: #f1f0f0;
+    cursor: pointer;
+}
+
+.user.selected {
+    background-color: #bebebe;
+}
+
+.user:last-child {
+    border: none !important;
+}
+
+.user .user-name {
+    font-size: 24px;
+    letter-spacing: 0.5px;
+}
+
+/* Chat Area */
+.container .content.chat {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 80%;
+    box-sizing: border-box;
+    /* border: 1px solid #333; */
+}
+
+.container .content.chat .messages {
+    flex-basis: 90%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.messages .message {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    margin: 5px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    width: auto;
+    max-width: 70%;
+    flex-direction: row;
+}
+
+.message .icon {
+    font-size: 30px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.message .icon > span {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.message .msg {
+    flex-basis: 80%;
+}
+
+.message.me {
+    align-self: flex-end;
+    background-color: #0084ff;
+    color: #ffffff;
+}
+
+.message.friend {
+    background-color: #f1f0f0;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.container .content.chat .input {
+    display: flex;
+    flex-basis: 10%;
+    flex-direction: row;
+    min-height: 100px;
+    border-top: 1px solid #999999;
+}
+
+.input .text {
+    flex-basis: 90%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.input .btn {
+    flex-basis: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid blue; */
+    font-size: 24px;
+    min-width: 100px;
+}
+
+.input:hover .btn {
+    background-color: #f1f0f0;
+    cursor: pointer;
 }
