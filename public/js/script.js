@@ -28,7 +28,16 @@ const sendUser = () => {
             }
             fetch(`http://localhost:8000/messages/${group}`)
                 .then(r => r.json())
-                .then(r => console.log(r));
+                .then(messages => {
+                    console.log(messages);
+                    for (message of messages) {
+                        if (message.user == user.name) {
+                            insertMessage(message.message);
+                        } else {
+                            insertMessage(message.message, message);
+                        }
+                    }
+                });
         });
 
         server.on('userConnected', data => {
